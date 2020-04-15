@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <style>
+        div.col-md,
+        div.col-sm,
+        div.col-lg {
+            border: 1px solid blue;
+        }
+
+        .predictive {
+            text-align: left;
+        }
+
+        .adaptive {
+            text-align: right;
+        }
+
+        .title {
+            font-size: 1.25rem;
+        }
+
+        .row-label {
+            margin-top: 25px;
+        }
+    </style>
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h3 class="display-4">Project Approach Assessment</h3>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm predictive title">
+                Predictive (Plan Driven)
+            </div>
+            <div class="col-sm adaptive title">
+                Adaptive (Change Driven)
+            </div>
+        </div>
+
+        <!-- slider block -->
+        <form>
+            <div class="row row-label">
+                <div class="col-md predictive">
+                    <label class="predictive" for="bizProcessRange1">Well Defined Business Processes</label>
+                </div>
+                <div class="col-md adaptive">
+                    <label class="adaptive" for="bizProcessRange1">Not Well Defined Business Processes</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md">
+                    <form>
+                        <div class="form-group">
+                            <input type="range" class="form-control-range" id="bizProcessRange1">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- slider block -->
+            <div class="row row-label">
+                <div class="col-md predictive">
+                    <label class="predictive" for="bizProcessRange2">Well Defined Business Processes</label>
+                </div>
+                <div class="col-md adaptive">
+                    <label class="adaptive" for="bizProcessRange2">Not Well Defined Business Processes</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md">
+                    <form>
+                        <div class="form-group">
+                            <input type="range" class="form-control-range" id="bizProcessRange2">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+    <script>
+//slider 1 script
+        $("label[for='bizProcessRange1']").click(function () {
+            let x = $("#bizProcessRange1").val();
+            console.log("x was" + x);
+            if ($(this).hasClass("predictive")) {
+                if (x >= 10) x -= 10;
+                console.log("x is now " + x);
+            }
+            if ($(this).hasClass("adaptive")) {
+                if (x <= 90) x = x * 1 + 10;
+                console.log("x is now " + x);
+            }
+            $("#bizProcessRange1").val(x);
+
+            $(document).ready(function () {
+                $("#result1 b").html($("#bizProcessRange1").val());
+
+                $("#bizProcessRange1").change(function () {
+                    $("#result1 b").html($(this).val());
+                });
+            });
+
+        });
+//slider 2 script
+        $("label[for='bizProcessRange2']").click(function () {
+            let x = $("#bizProcessRange2").val();
+            console.log("x was" + x);
+            if ($(this).hasClass("predictive")) {
+                if (x >= 10) x -= 10;
+                console.log("x is now " + x);
+            }
+            if ($(this).hasClass("adaptive")) {
+                if (x <= 90) x = x * 1 + 10;
+                console.log("x is now " + x);
+            }
+            $("#bizProcessRange2").val(x);
+
+            $(document).ready(function () {
+                $("#result2 b").html($("#bizProcessRange2").val());
+
+                $("#bizProcessRange2").change(function () {
+                    $("#result2 b").html($(this).val());
+                });
+            });
+
+        });
+
+
+    </script>
+
+    <div id="result1">
+        Result is: <b>50</b>
+    </div>
+
+    <div id="result2">
+        Result is: <b>50</b>
+    </div>
+
+</body>
+
+</html>
