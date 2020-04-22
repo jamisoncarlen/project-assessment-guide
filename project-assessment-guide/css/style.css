@@ -1,5 +1,14 @@
+#readiness-assessment-grid .row {
+  margin-top: 15px;
+}
+
+#readiness-assessment-grid span, #readiness-assessment-grid h2 {
+  cursor: pointer;
+}
+
 h3.display-4 {
-  font-size: 25px;
+  font-size: 30px;
+  font-weight: 500;
 }
 
 .predictive {
@@ -18,11 +27,12 @@ h3.display-4 {
   margin-top: 10px;
 }
 
-div.jumbotron {
+.header {
   margin-bottom: 0px;
-  background-color: #272727;
   color: white;
   padding: 15px;
+  background-image: url("../img/header.png");
+  background-size: cover;
 }
 
 input[type=range] {
@@ -49,9 +59,10 @@ input[type=range]::-webkit-slider-thumb {
 
 .content {
   margin-top: 10px;
-  margin-left: 175px;
-  margin-right: 175px;
+  margin-left: 225px;
+  margin-right: 225px;
   border: 2px solid black;
+  padding-bottom: 10px;
 }
 
 .orangeDiv {
@@ -74,9 +85,25 @@ input[type=range]::-webkit-slider-thumb {
   color: white;
 }
 
-/* div.col-md,
-div.col-sm,
-div.col-lg {
-    border: 1px dotted grey;
-} */
+.center {
+  padding: 10px;
+  text-align: center;
+}
+
+.imgClass {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  cursor: pointer;
+}
+
+.dt {
+  margin: 5px;
+  text-align: center;
+  font-size: 2vw;
+}
+
+span {
+  font-size: 1vw;
+}
 /*# sourceMappingURL=style.css.map */
